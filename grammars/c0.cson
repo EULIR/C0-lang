@@ -1,0 +1,59 @@
+'scopeName': 'source.c0'
+'name': 'c0'
+'fileTypes': ['c0']
+'patterns': [
+  {
+    'match': '\\b[0-9]+\\b'
+    'name': 'constant.numeric.c0'
+  }
+  {
+    'match': '\\b(int|bool|char|string|void|typedef|struct)\\b'
+    'name': 'support.storage.type.c0'
+  }
+  {
+    'match': '\\b(if|else|for|while|return|break|continue|assert|error)\\b'
+    'name': 'keyword.control.c0'
+  }
+  {
+    'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
+    'name': 'constant.language.boolean.c0'
+  }
+  {
+    'match': '\\b(requires|ensures|loop_invariant|length|result|hastag)\\b'
+    'name': 'entity.name.function.c0'
+  }
+  {
+    'match': '\\b(use)\\b'
+    'name': 'entity.name.instance.c0'
+  }
+   {
+    'begin': '{'
+    'beginCaptures':
+      '0':
+        'name': 'meta.brace.curly.c0'
+    'end': '}'
+    'endCaptures':
+      '0':
+        'name': 'meta.brace.curly.c0'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\('
+    'beginCaptures':
+      '0':
+        'name': 'meta.brace.round.c0'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'meta.brace.round.c0'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+]
