@@ -1,5 +1,5 @@
 'scopeName': 'source.c0'
-'name': 'c0'
+'name': 'C0'
 'fileTypes': ['c0']
 'patterns': [
   {
@@ -19,14 +19,35 @@
     'name': 'constant.language.boolean.c0'
   }
   {
-    'match': '\\b(requires|ensures|loop_invariant|length|result|hastag)\\b'
-    'name': 'entity.name.function.c0'
+    'match': '@requires|@ensures|@loop_invariant'
+    'name': 'variable.other.c0'
   }
   {
-    'match': '\\b(use)\\b'
-    'name': 'entity.name.instance.c0'
+    'match': '#use'
+    'name': 'keyword.other.import.c0'
   }
-   {
+  {
+    'match':'\"([^\"]*)\"'
+    'name':'string.quoted.double.c0'
+  }
+  {
+    'match':'\<([^\>]*)\>'
+    'name':'string.quoted.double.c0'
+  }
+  {
+    'match':'\/\/(.*)'
+    'name':'comment.block.c0'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'variable.other.c0'
+      '2':
+        'name': 'comment.block.c0'
+    'match': '@requires|@ensures|@loop_invariant(\/\/(.*))'
+    'name': 'entity.name.instance.protobuf'
+  }
+  {
     'begin': '{'
     'beginCaptures':
       '0':
@@ -47,6 +68,21 @@
       '0':
         'name': 'meta.brace.round.c0'
     'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'meta.brace.round.c0'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\<'
+    'beginCaptures':
+      '0':
+        'name': 'meta.brace.round.c0'
+    'end': '\\>'
     'endCaptures':
       '0':
         'name': 'meta.brace.round.c0'
