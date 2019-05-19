@@ -23,6 +23,10 @@
     'name': 'variable.other.c0'
   }
   {
+    'match': '\\\length'
+    'name': 'variable.other.c0'
+  }
+  {
     'match': '#use'
     'name': 'keyword.other.import.c0'
   }
@@ -35,8 +39,12 @@
     'name':'string.quoted.double.c0'
   }
   {
-    'match':'\/\/(.*)'
+    'match':'^(?!.*@).*\/\/.*$'
     'name':'comment.block.c0'
+  }
+  {
+    'match':'\\/\\*@.*?\@\*\\/ ?'
+    'name':'source.c0'
   }
   {
     'captures':
@@ -45,7 +53,7 @@
       '2':
         'name': 'comment.block.c0'
     'match': '@requires|@ensures|@loop_invariant(\/\/(.*))'
-    'name': 'entity.name.instance.protobuf'
+    'name': 'entity.name.instance.c0'
   }
   {
     'begin': '{'
