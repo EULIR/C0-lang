@@ -1,6 +1,6 @@
 {
   "name": "language-c0",
-  "version": "0.0.1",
+  "version": "1.4.0",
   "description": "Syntax highlighting for C0 in the Atom editor.",
   "keywords": [
     "language"

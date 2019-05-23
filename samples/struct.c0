@@ -1,0 +1,7 @@
+/* file struct.c0 */
+struct person {
+  int id;
+  string name;
+  int age;
+};
+typedef struct person* person;

@@ -1,0 +1,12 @@
+/* file fact-e1.c0 */
+int factorial(int n)
+//@requires n >= 0;
+{
+  int result = 1;      /* line 1 */
+  while (i <= n) {     /* line 2; reference to undeclared variable */
+    int i = 1;         /* line 3 */
+    result = result*i; /* line 4 */
+    i = i+1;           /* line 5 */
+  }
+  return result;       /* line 6 */
+}
