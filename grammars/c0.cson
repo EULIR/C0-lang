@@ -19,12 +19,12 @@
     'name': 'constant.language.boolean.c0'
   }
   {
-    'match': '@requires|@ensures|@loop_invariant'
+    'match': 'requires|ensures|loop_invariant|assert'
     'name': 'variable.other.c0'
   }
   {
-    'match': '\\\length'
-    'name': 'variable.other.c0'
+    'match': '\\\\length|\\\\result|\\\\hastag'
+    'name': 'constant.language.c0'
   }
   {
     'match': '#use'
@@ -43,8 +43,81 @@
     'name':'comment.block.c0'
   }
   {
-    'match':'\\/\\*@.*?\@\*\\/ ?'
-    'name':'source.c0'
+    'begin': '/\\*@'
+    'beginCaptures':
+      '0':
+        'name': 'c0'
+    'end': '\\@*/'
+    'endCaptures':
+      '0':
+        'name': 'c0'
+    'name': 'c0'
+    'patterns': [
+      {
+        'match': 'requires|ensures|loop_invariant|assert'
+        'name': 'variable.other.c0'
+      }
+      {
+        'match': '\\\\length|\\\\result|\\\\hastag'
+        'name': 'constant.language.c0'
+      }
+      {
+        'match': '\\b[0-9]+\\b'
+        'name': 'constant.numeric.c0'
+      }
+      {
+        'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
+        'name': 'constant.language.boolean.c0'
+      }
+    ]
+  }
+  {
+    'begin': '/\\*'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.begin.c0'
+    'end': '\\*/'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.end.c0'
+    'name': 'comment.block.c'
+  }
+  {
+    'begin': '''(?x)
+      ^\\s* ((\\#)\\s*define) \\s+    # define
+      ((?<id>[a-zA-Z_$][\\w$]*))      # macro name
+      (?:
+        (\\()
+          (
+            \\s* \\g<id> \\s*         # first argument
+            ((,) \\s* \\g<id> \\s*)*  # additional arguments
+            (?:\\.\\.\\.)?            # varargs ellipsis?
+          )
+        (\\))
+      )?
+    '''
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.define.c0'
+      '2':
+        'name': 'punctuation.definition.directive.c0'
+      '3':
+        'name': 'entity.name.function.preprocessor.c0'
+      '5':
+        'name': 'punctuation.definition.parameters.begin.c0'
+      '6':
+        'name': 'variable.parameter.preprocessor.c0'
+      '8':
+        'name': 'punctuation.separator.parameters.c0'
+      '9':
+        'name': 'punctuation.definition.parameters.end.c0'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.macro.c0'
+    'patterns': [
+      {
+        'include': '#preprocessor-rule-define-line-contents'
+      }
+    ]
   }
   {
     'captures':
@@ -52,7 +125,7 @@
         'name': 'variable.other.c0'
       '2':
         'name': 'comment.block.c0'
-    'match': '@requires|@ensures|@loop_invariant(\/\/(.*))'
+    'match': 'requires|ensures|loop_invariant|assert(\/\/(.*))'
     'name': 'entity.name.instance.c0'
   }
   {
