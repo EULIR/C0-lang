@@ -39,9 +39,56 @@
     'name':'string.quoted.double.c0'
   }
   {
-    'match':'^(?!.*@).*\/\/.*$'
-    'name':'comment.block.c0'
+    'match':'\\b(print|println|printint|printbool|printchar|flush|eof|readline|file_closed|file_read|file_close|file_eof|file_readline|args_flag|args_int|args_string|args|args_parse|parse_bool|parse_int|num_tokens|int_tokens|parse_tokens|parse_ints|string_length|string_charat|string_join|string_sub|string_equal|string_compare|string_fromint|string_frombool|string_fromchar|string_tolower|string_terminated|string_to_chararray|string_from_chararray|char_ord|char_chr|image_width|image_height|image_create|image_clone|image_subimage|image_load|image_save|image_data|init_rand|rand|int_size|int_max|int_min|abs|max|min|int2hex)\\b'
+    'name':'entity.name.function.c0'
   }
+  
+  {
+    'begin': '\\//\\@'
+    'beginCaptures':
+      '0':
+        'name': 'c0'
+    'end': '(\n)'
+    'endCaptures':
+      '0':
+        'name': 'c0'
+    'name': 'c0'
+    'patterns': [
+      {
+        'match': 'requires|ensures|loop_invariant|assert'
+        'name': 'variable.other.c1'
+      }
+      {
+        'match': '\\\\length|\\\\result|\\\\hastag'
+        'name': 'constant.language.c0'
+      }
+      {
+        'match': '\\b[0-9]+\\b'
+        'name': 'constant.numeric.c0'
+      }
+      {
+        'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
+        'name': 'constant.language.boolean.c0'
+      }
+      {
+        'match':'\\b(print|println|printint|printbool|printchar|flush|eof|readline|file_closed|file_read|file_close|file_eof|file_readline|args_flag|args_int|args_string|args|args_parse|parse_bool|parse_int|num_tokens|int_tokens|parse_tokens|parse_ints|string_length|string_charat|string_join|string_sub|string_equal|string_compare|string_fromint|string_frombool|string_fromchar|string_tolower|string_terminated|string_to_chararray|string_from_chararray|char_ord|char_chr|image_width|image_height|image_create|image_clone|image_subimage|image_load|image_save|image_data|init_rand|rand|int_size|int_max|int_min|abs|max|min|int2hex)\\b'
+        'name':'entity.name.function.c0'
+      }
+    ]
+  }
+  
+  {
+    'begin': '\\//'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.begin.c0'
+    'end': '(\n)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.end.c0'
+    'name': 'comment.block.one.c0'
+  }
+  
   {
     'begin': '/\\*@'
     'beginCaptures':
@@ -69,6 +116,10 @@
         'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
         'name': 'constant.language.boolean.c0'
       }
+      {
+        'match':'\\b(print|println|printint|printbool|printchar|flush|eof|readline|file_closed|file_read|file_close|file_eof|file_readline|args_flag|args_int|args_string|args|args_parse|parse_bool|parse_int|num_tokens|int_tokens|parse_tokens|parse_ints|string_length|string_charat|string_join|string_sub|string_equal|string_compare|string_fromint|string_frombool|string_fromchar|string_tolower|string_terminated|string_to_chararray|string_from_chararray|char_ord|char_chr|image_width|image_height|image_create|image_clone|image_subimage|image_load|image_save|image_data|init_rand|rand|int_size|int_max|int_min|abs|max|min|int2hex)\\b'
+        'name':'entity.name.function.c0'
+      }
     ]
   }
   {
@@ -80,7 +131,7 @@
     'endCaptures':
       '0':
         'name': 'punctuation.definition.comment.end.c0'
-    'name': 'comment.block.c'
+    'name': 'comment.block.c0'
   }
   {
     'begin': '''(?x)
