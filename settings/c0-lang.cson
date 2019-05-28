@@ -1,0 +1,6 @@
+'.source.c0':
+  'editor':
+    'commentStart': '// '
+    'tabLength': 2
+    'softTab': true
+    'preferredLineLength': 80

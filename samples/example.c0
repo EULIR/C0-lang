@@ -1,0 +1,29 @@
+/* example.c0 */
+
+#use <conio>
+
+int[] array_copy(int[] A, int n)
+//@requires 0 <= n && n <= \length(A);
+//@ensures \length(\result) == n;
+{
+  int[] B = alloc_array(int, n);
+  for (int i = 0; i < n; i++)
+    //@loop_invariant 0 <= i;
+    B[i] = A[i]; //this is a comment
+  return B;
+}
+
+void print_array(int[] A, int n, string array_name)
+/*@requires 0 <= n && n <= \length(A); @*/
+{
+  for (int i = 0; i < n; i++) {
+    /* This is
+        a multiline comment */
+    print(array_name);
+    print("[");
+    printint(i);
+    bool boo = true;
+    assert(i > 0);
+  }
+  return;
+}
