@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle c0-lang",
+        "command": "c0-lang:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "c0-lang",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "c0-lang:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

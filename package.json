@@ -1,17 +1,23 @@
 {
-  "name": "language-c0",
-  "version": "1.4.0",
-  "description": "Syntax highlighting for C0 in the Atom editor.",
+  "name": "C0-lang",
+  "main": "./lib/c0-lang",
+  "version": "1.0.0",
+  "description": "Syntax Highlighting for C0 Programming Language in Atom",
   "keywords": [
     "language"
   ],
-  "author": "EULIR (https://github.com/EULIR)",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=0.174.0 <2.0.0"
+  "activationCommands": {
+    "atom-workspace": "c0-lang:toggle"
   },
+  "author": "EULIR (https://github.com/EULIR)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EULIR/c0-lang"
+    "url": "https://github.com/EULIR/C0-lang"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
   }
 }
