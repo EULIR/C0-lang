@@ -1,7 +1,7 @@
 # C0-lang package
 
 This is an Atom package that provides syntax highlighting for C0 programming language (See below for what C0 is).   
-![](https://img.shields.io/apm/v/C0-lang.svg) ![](https://img.shields.io/apm/l/C0-lang.svg)
+![](https://img.shields.io/apm/v/C0-lang.svg) ![](https://img.shields.io/apm/l/C0-lang.svg) ![APM](https://img.shields.io/apm/dm/c0-lang.svg)
 
 ## What is C0
 
