@@ -35,6 +35,10 @@
     'name':'string.quoted.double.c0'
   }
   {
+    'match':'\'([^\']*)\''
+    'name':'string.quoted.single.c0'
+  }
+  {
     'match':'\<([^\>]*)\>'
     'name':'string.quoted.double.c0'
   }
