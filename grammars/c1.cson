@@ -1,0 +1,234 @@
+'scopeName': 'source.c1'
+'name': 'C1'
+'fileTypes': ['c1']
+'patterns': [
+  {
+    'match': '\\b[0-9]+\\b'
+    'name': 'constant.numeric.c1'
+  }
+  {
+    'match': '\\b(int|bool|char|string|void|typedef|struct)\\b'
+    'name': 'support.storage.type.c1'
+  }
+  {
+    'match': '\\b(if|else|for|while|return|break|continue|assert|error)\\b'
+    'name': 'keyword.control.c1'
+  }
+  {
+    'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
+    'name': 'constant.language.boolean.c1'
+  }
+  {
+    'match': 'requires|ensures|loop_invariant|assert'
+    'name': 'variable.other.c1'
+  }
+  {
+    'match': '\\\\length|\\\\result|\\\\hastag'
+    'name': 'constant.language.c1'
+  }
+  {
+    'match': '#use'
+    'name': 'keyword.other.import.c1'
+  }
+  {
+    'match':'\"([^\"]*)\"'
+    'name':'string.quoted.double.c1'
+  }
+  {
+    'match':'\'([^\']*)\''
+    'name':'string.quoted.single.c1'
+  }
+  {
+    'match':'\<([^\>]*)\>'
+    'name':'string.quoted.double.c1'
+  }
+  {
+    'match':'\\b(print|println|printint|printbool|printchar|flush|eof|readline|file_closed|file_read|file_close|file_eof|file_readline|args_flag|args_int|args_string|args|args_parse|parse_bool|parse_int|num_tokens|int_tokens|parse_tokens|parse_ints|string_length|string_charat|string_join|string_sub|string_equal|string_compare|string_fromint|string_frombool|string_fromchar|string_tolower|string_terminated|string_to_chararray|string_from_chararray|char_ord|char_chr|image_width|image_height|image_create|image_clone|image_subimage|image_load|image_save|image_data|init_rand|rand|int_size|int_max|int_min|abs|max|min|int2hex)\\b'
+    'name':'entity.name.function.c1'
+  }
+  {
+    'match':'\\b(\\w+)\\s*(?=\\()\\b'
+    'name':'entity.name.function.c1'
+  }
+  {
+    'begin': '\\//\\@'
+    'beginCaptures':
+      '0':
+        'name': 'c1'
+    'end': '(\n)'
+    'endCaptures':
+      '0':
+        'name': 'c1'
+    'name': 'c1'
+    'patterns': [
+      {
+        'match': 'requires|ensures|loop_invariant|assert'
+        'name': 'variable.other.c1'
+      }
+      {
+        'match': '\\\\length|\\\\result|\\\\hastag'
+        'name': 'constant.language.c1'
+      }
+      {
+        'match': '\\b[0-9]+\\b'
+        'name': 'constant.numeric.c1'
+      }
+      {
+        'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
+        'name': 'constant.language.boolean.c1'
+      }
+      {
+        'match':'\\b(print|println|printint|printbool|printchar|flush|eof|readline|file_closed|file_read|file_close|file_eof|file_readline|args_flag|args_int|args_string|args|args_parse|parse_bool|parse_int|num_tokens|int_tokens|parse_tokens|parse_ints|string_length|string_charat|string_join|string_sub|string_equal|string_compare|string_fromint|string_frombool|string_fromchar|string_tolower|string_terminated|string_to_chararray|string_from_chararray|char_ord|char_chr|image_width|image_height|image_create|image_clone|image_subimage|image_load|image_save|image_data|init_rand|rand|int_size|int_max|int_min|abs|max|min|int2hex)\\b'
+        'name':'entity.name.function.c1'
+      }
+    ]
+  }
+
+  {
+    'begin': '\\//'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.begin.c1'
+    'end': '(\n)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.end.c1'
+    'name': 'comment.block.one.c1'
+  }
+
+  {
+    'begin': '/\\*@'
+    'beginCaptures':
+      '0':
+        'name': 'c1'
+    'end': '\\@*/'
+    'endCaptures':
+      '0':
+        'name': 'c1'
+    'name': 'c1'
+    'patterns': [
+      {
+        'match': 'requires|ensures|loop_invariant|assert'
+        'name': 'variable.other.c1'
+      }
+      {
+        'match': '\\\\length|\\\\result|\\\\hastag'
+        'name': 'constant.language.c1'
+      }
+      {
+        'match': '\\b[0-9]+\\b'
+        'name': 'constant.numeric.c1'
+      }
+      {
+        'match': '\\b(true|false|NULL|alloc|alloc_array)\\b'
+        'name': 'constant.language.boolean.c1'
+      }
+      {
+        'match':'\\b(print|println|printint|printbool|printchar|flush|eof|readline|file_closed|file_read|file_close|file_eof|file_readline|args_flag|args_int|args_string|args|args_parse|parse_bool|parse_int|num_tokens|int_tokens|parse_tokens|parse_ints|string_length|string_charat|string_join|string_sub|string_equal|string_compare|string_fromint|string_frombool|string_fromchar|string_tolower|string_terminated|string_to_chararray|string_from_chararray|char_ord|char_chr|image_width|image_height|image_create|image_clone|image_subimage|image_load|image_save|image_data|init_rand|rand|int_size|int_max|int_min|abs|max|min|int2hex)\\b'
+        'name':'entity.name.function.c1'
+      }
+    ]
+  }
+  {
+    'begin': '/\\*'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.begin.c1'
+    'end': '\\*/'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.end.c1'
+    'name': 'comment.block.c1'
+  }
+  {
+    'begin': '''(?x)
+      ^\\s* ((\\#)\\s*define) \\s+    # define
+      ((?<id>[a-zA-Z_$][\\w$]*))      # macro name
+      (?:
+        (\\()
+          (
+            \\s* \\g<id> \\s*         # first argument
+            ((,) \\s* \\g<id> \\s*)*  # additional arguments
+            (?:\\.\\.\\.)?            # varargs ellipsis?
+          )
+        (\\))
+      )?
+    '''
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.define.c1'
+      '2':
+        'name': 'punctuation.definition.directive.c1'
+      '3':
+        'name': 'entity.name.function.preprocessor.c1'
+      '5':
+        'name': 'punctuation.definition.parameters.begin.c1'
+      '6':
+        'name': 'variable.parameter.preprocessor.c1'
+      '8':
+        'name': 'punctuation.separator.parameters.c1'
+      '9':
+        'name': 'punctuation.definition.parameters.end.c1'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.macro.c1'
+    'patterns': [
+      {
+        'include': '#preprocessor-rule-define-line-contents'
+      }
+    ]
+  }
+  {
+    'captures':
+      '1':
+        'name': 'variable.other.c1'
+      '2':
+        'name': 'comment.block.c1'
+    'match': 'requires|ensures|loop_invariant|assert(\/\/(.*))'
+    'name': 'entity.name.instance.c1'
+  }
+  {
+    'begin': '{'
+    'beginCaptures':
+      '0':
+        'name': 'meta.brace.curly.c1'
+    'end': '}'
+    'endCaptures':
+      '0':
+        'name': 'meta.brace.curly.c1'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\('
+    'beginCaptures':
+      '0':
+        'name': 'meta.brace.round.c1'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'meta.brace.round.c1'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+  {
+    'begin': '\\<'
+    'beginCaptures':
+      '0':
+        'name': 'meta.brace.round.c1'
+    'end': '\\>'
+    'endCaptures':
+      '0':
+        'name': 'meta.brace.round.c1'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
+]
